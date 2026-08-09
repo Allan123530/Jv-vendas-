@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Al Online | Serviços Digitais</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #080808;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      background: rgba(8,8,8,.95);
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #00ff88;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #00ff88;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 7%;
+      background:
+        radial-gradient(circle at 80% 20%, #063d29 0%, transparent 35%),
+        #080808;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid #00ff88;
+      color: #00ff88;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #00ff88;
+    }
+
+    .hero p {
+      color: #bbb;
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+      transition: .2s;
+      cursor: pointer;
+      border: none;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: #00ff88;
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,255,136,.2);
+    }
+
+    .btn-secondary {
+      border: 1px solid #444;
+      color: #fff;
+      background: #111;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #999;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #242424;
+      border-radius: 16px;
+      padding: 30px;
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #00ff88;
+    }
+
+    .icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #999;
+      font-size: 15px;
+    }
+
+    .price-section {
+      background: #0c0c0c;
+    }
+
+    .price-card {
+      max-width: 500px;
+      margin: auto;
+      background: #111;
+      border: 1px solid #00ff88;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .price {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #00ff88;
+    }
+
+    .price-card ul {
+      list-style: none;
+      text-align: left;
+      margin: 25px 0;
+    }
+
+    .price-card li {
+      padding: 8px 0;
+      color: #ccc;
+    }
+
+    .order {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    form {
+      background: #111;
+      padding: 35px;
+      border-radius: 18px;
+      border: 1px solid #242424;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background: #080808;
+      color: #fff;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #00ff88;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    form button {
+      width: 100%;
+      margin-top: 25px;
+    }
+
+    .contact {
+      text-align: center;
+      background: #00ff88;
+      color: #000;
+    }
+
+    .contact h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      margin-bottom: 25px;
+    }
+
+    .contact .btn {
+      background: #000;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #050505;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .hero {
+        padding: 60px 5%;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .price-card,
+      form {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Al<span>Online</span></div>
+
+  <nav>
+    <a href="#servicos">Serviços</a>
+    <a href="#pacote">Pacote</a>
+    <a href="#pedido">Pedido</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="tag">🚀 Serviços digitais</div>
+
+    <h1>
+      Seu negócio merece uma presença <span>online profissional.</span>
+    </h1>
+
+    <p>
+      Criação de artes, vídeos, banners e conteúdos digitais
+      para ajudar você a divulgar seu projeto nas redes sociais.
+    </p>
+
+    <a href="#pedido" class="btn btn-primary">
+      Fazer meu pedido
+    </a>
+
+    <a href="#servicos" class="btn btn-secondary">
+      Ver serviços
+    </a>
+
+  </div>
+</section>
+
+<section id="servicos">
+
+  <div class="section-title">
+    <h2>O que fazemos</h2>
+    <p>Escolha o serviço que você precisa.</p>
+  </div>
+
+  <div class="services">
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Artes para Instagram</h3>
+      <p>
+        Posts, stories e artes promocionais para deixar
+        seu perfil mais profissional.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎬</div>
+      <h3>Edição de vídeos</h3>
+      <p>
+        Vídeos curtos para Reels, TikTok, Shorts e
+        divulgação de produtos.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🖼️</div>
+      <h3>Banners e anúncios</h3>
+      <p>
+        Banners para lojas, redes sociais, anúncios
+        e divulgação de produtos.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Materiais digitais</h3>
+      <p>
+        E-books, capas, PDFs e outros materiais
+        digitais personalizados.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎮</div>
+      <h3>Conteúdo gamer</h3>
+      <p>
+        Thumbnails, banners e artes para criadores
+        de conteúdo e jogadores.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>Conteúdo para redes</h3>
+      <p>
+        Criação de conteúdos visuais para ajudar
+        sua marca a chamar atenção.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="pacote" class="price-section">
+
+  <div class="section-title">
+    <h2>Pacote Começo Online</h2>
+    <p>Uma opção simples para quem está começando.</p>
+  </div>
+
+  <div class="price-card">
+
+    <h3>Pacote Inicial</h3>
+
+    <div class="price">R$ 29,90</div>
+
+    <p>Pagamento único</p>
+
+    <ul>
+      <li>✅ 5 artes para redes sociais</li>
+      <li>✅ 1 banner promocional</li>
+      <li>✅ 1 vídeo curto</li>
+      <li>✅ Arquivos digitais</li>
+      <li>✅ Personalização básica</li>
+    </ul>
+
+    <a href="#pedido" class="btn btn-primary">
+      Quero esse pacote
+    </a>
+
+  </div>
+</section>
+
+<section id="pedido">
+
+  <div class="section-title">
+    <h2>Faça seu pedido</h2>
+    <p>Preencha o formulário e envie as informações.</p>
+  </div>
+
+  <div class="order">
+
+    <form id="orderForm">
+
+      <label for="nome">Seu nome</label>
+      <input
+        type="text"
+        id="nome"
+        placeholder="Digite seu nome"
+        required
+      >
+
+      <label for="servico">Escolha o serviço</label>
+
+      <select id="servico" required>
+        <option value="">Selecione</option>
+        <option>Pacote Começo Online - R$ 29,90</option>
+        <option>Arte para Instagram</option>
+        <option>Edição de vídeo</option>
+        <option>Banner / anúncio</option>
+        <option>Material digital</option>
+        <option>Conteúdo gamer</option>
+        <option>Outro serviço</option>
+      </select>
+
+      <label for="contato">Seu WhatsApp</label>
+      <input
+        type="tel"
+        id="contato"
+        placeholder="(00) 00000-0000"
+        required
+      >
+
+      <label for="descricao">Conte o que você precisa</label>
+
+      <textarea
+        id="descricao"
+        placeholder="Explique como você quer o seu pedido..."
+        required
+      ></textarea>
+
+      <button type="submit" class="btn btn-primary">
+        📲 Enviar pedido pelo WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+<section class="contact">
+
+  <h2>Vamos começar?</h2>
+
+  <p>
+    Entre em contato e explique o que você precisa.
+  </p>
+
+  <a
+    href="https://wa.me/5500000000000"
+    class="btn"
+    target="_blank"
+  >
+    Falar pelo WhatsApp
+  </a>
+
+</section>
+
+<footer>
+  © 2026 Al Online — Serviços Digitais
+</footer>
+
+<script>
+
+  const form = document.getElementById("orderForm");
+
+  form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const servico = document.getElementById("servico").value;
+    const contato = document.getElementById("contato").value;
+    const descricao = document.getElementById("descricao").value;
+
+    /*
+      TROQUE 5500000000000 PELO SEU NÚMERO
+      COM DDI + DDD + NÚMERO.
+
+      Exemplo:
+      5571999999999
+    */
+
+    const numeroWhatsApp = "5500000000000";
+
+    const mensagem =
+      "Olá! Quero fazer um pedido.%0A%0A" +
+      "Nome: " + encodeURIComponent(nome) + "%0A" +
+      "Serviço: " + encodeURIComponent(servico) + "%0A" +
+      "WhatsApp: " + encodeURIComponent(contato) + "%0A" +
+      "Pedido: " + encodeURIComponent(descricao);
+
+    window.open(
+      "https://wa.me/" + numeroWhatsApp + "?text=" + mensagem,
+      "_blank"
+    );
+
+  });
+
+</script>
+
+</body>
+</html>
