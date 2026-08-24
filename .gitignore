@@ -29,5 +29,5 @@ yarn-error.log*
 .coverage
 .nyc_output
 
-# Files
+# Vercel
 .vercel
