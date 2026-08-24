@@ -62,16 +62,16 @@ Acesse [http://localhost:3000](http://localhost:3000)
 src/
 ├── app/              # Rotas e páginas Next.js
 ├── components/       # Componentes React
-│   ├── Layout/      # Navbar, Footer
-│   ├── UI/          # Componentes base (Button, Card, Input)
-│   └── Products/    # Componentes de produtos
-├── lib/             # Utilidades e configurações
-│   ├── hooks/       # React Hooks customizados
-│   ├── supabase.ts  # Cliente Supabase
-│   ├── auth.ts      # Funções de autenticação
-│   ├── store.ts     # Zustand stores
-│   └── utils.ts     # Funções auxiliares
-└── styles/          # Estilos globais
+│   ├── Layout/       # Navbar, Footer
+│   ├── UI/           # Componentes base (Button, Card, Input)
+│   └── Products/     # Componentes de produtos
+├── lib/              # Utilidades e configurações
+│   ├── hooks/        # React Hooks customizados
+│   ├── supabase.ts   # Cliente Supabase
+│   ├── auth.ts       # Funções de autenticação
+│   ├── store.ts      # Zustand stores
+│   └── utils.ts      # Funções auxiliares
+└── styles/           # Estilos globais
 ```
 
 ## 🔐 Autenticação
