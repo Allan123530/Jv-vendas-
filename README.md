@@ -4,7 +4,7 @@ Plataforma moderna de catálogos digitais para vendedores.
 
 **"Seu catálogo. Seus produtos. Seu espaço."**
 
-## 🎯 Recursos
+## ✨ Recursos
 
 - ✨ Autenticação segura com Supabase
 - 📦 Gerenciamento de produtos
@@ -23,7 +23,7 @@ Plataforma moderna de catálogos digitais para vendedores.
 4. Execute: `npm run dev`
 5. Abra http://localhost:3000
 
-## 📋 Stack
+## 📚 Stack
 
 - **Frontend**: Next.js 14, React 18, TailwindCSS
 - **Backend**: Supabase (PostgreSQL + Auth + Storage)
@@ -38,6 +38,6 @@ Plataforma moderna de catálogos digitais para vendedores.
 - Validação de formulários
 - Proteção de rotas administrativas
 
-## 📚 Documentação
+## 📖 Documentação
 
 Veja a estrutura do projeto em `/docs`
